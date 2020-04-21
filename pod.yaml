@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: cont
-          image: httpd
+          image: nginx
   selector:
     matchLabels:
       app: green
