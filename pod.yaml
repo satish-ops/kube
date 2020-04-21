@@ -1,18 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: green1
+  name: deploymentinyaml
+  labels:
+    color: blue
+    app: erp
 spec:
-  replicas: 4
+  replicas: 3
   template:
     metadata:
-      name: nginxpod4jenkins
+      name: deploymentpodinyamlusingjenkins
       labels:
-        app: green
+        app: erp
     spec:
-      containers:
-        - name: cont
-          image: nginx
+     containers:
+       - name: deploymentcontainerinyamlusingjenkins
+         image: nginx
   selector:
     matchLabels:
-      app: green
+      app: erp
