@@ -6,7 +6,7 @@ spec:
   replicas: 4
   template:
     metadata:
-      name: blue
+      name: nginxpod4jenkins
       labels:
         app: green
     spec:
