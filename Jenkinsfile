@@ -7,14 +7,14 @@ node {
     sh "git rev-parse --short HEAD > commit-id"
 
     tag = readFile('commit-id').replace("\n", "").replace("\r", "")
-    appName = "jboss"
+    appName = "nginx"
     registryHost = "127.0.0.1:30400/"
     imageName = "${registryHost}${appName}:${tag}"
     env.BUILDIMG=imageName
 
     stage "Build"
     
-        sh "docker build -t ${imageName} -f applications/jboss/Dockerfile applications/jboss"
+        sh "docker build -t ${imageName} -f applications/nginx/Dockerfile applications/nginx"
     
     stage "Push"
 
